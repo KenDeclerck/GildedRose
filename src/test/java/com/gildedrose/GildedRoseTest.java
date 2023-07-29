@@ -21,7 +21,7 @@ class GildedRoseTest {
     void shouldUpdateQualityAndSellIn(String name, int initialSellIn, int initialQuality, int expectedSellIn, int expectedQuality) {
         Item[] items = {new Item(name, initialSellIn, initialQuality)};
 
-        GildedRose.updateQuality(items);
+        GildedRose.processItemsForOneDay(items);
 
         assertItemQualityAndSellIn(items[0], expectedSellIn, expectedQuality);
     }

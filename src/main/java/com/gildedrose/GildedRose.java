@@ -1,22 +1,9 @@
 package com.gildedrose;
 
 class GildedRose {
-    Item[] items;
 
-    public GildedRose(Item[] items) {
-        this.items = items;
-    }
-
-    private static void addQuality(Item item, int amount) {
-        item.quality = Math.min(item.quality + amount, 50);
-    }
-
-    private static boolean sellByDateHasPassed(Item item) {
-        return item.sellIn < 0;
-    }
-
-    public static void updateQuality(Item[] items1) {
-        for (Item item : items1) {
+    public static void processItemsForOneDay(Item[] items) {
+        for (Item item : items) {
             switch (ItemName.forName(item.name)) {
                 case AGED_BRIE:
                     updateSellIn(item);
@@ -44,10 +31,6 @@ class GildedRose {
         }
     }
 
-    private static void subtractQuality(Item item, int amount) {
-        item.quality = Math.max(item.quality - amount, 0);
-    }
-
     private static void processBackStagePasses(Item item) {
         if (item.sellIn > 10) {
             addQuality(item, 1);
@@ -70,5 +53,17 @@ class GildedRose {
 
     private static void updateSellIn(Item item) {
         item.sellIn = item.sellIn - 1;
+    }
+
+    private static boolean sellByDateHasPassed(Item item) {
+        return item.sellIn < 0;
+    }
+
+    private static void subtractQuality(Item item, int amount) {
+        item.quality = Math.max(item.quality - amount, 0);
+    }
+
+    private static void addQuality(Item item, int amount) {
+        item.quality = Math.min(item.quality + amount, 50);
     }
 }
