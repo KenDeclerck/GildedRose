@@ -16,5 +16,10 @@ public enum ItemType {
 
     public static ItemType forName(String value) {
         return Arrays.stream(values()).filter(itemType ->  itemType.name.equals(value)).findFirst().orElse(DEFAULT);
-    };
+    }
+
+    public String getName() {
+        return name;
+    }
+
 }

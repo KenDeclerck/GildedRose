@@ -25,16 +25,16 @@ class GildedRoseTest {
             Arguments.of("Normal item", 10, 10, 9, 9),
             Arguments.of("other normal item", 5, 16, 4, 15),
             Arguments.of("other normal item", 5, 0, 4, 0),
-            Arguments.of(ItemType.SULFURAS.name(), 10, 80, 10, 80),
-            Arguments.of(ItemType.AGED_BRIE.name(), 10, 10, 9, 11),
-            Arguments.of(ItemType.AGED_BRIE.name(), 10, 50, 9, 50),
-            Arguments.of(ItemType.BACKSTAGE_PASSES.name(), 10, 10, 9, 12),
-            Arguments.of(ItemType.BACKSTAGE_PASSES.name(), 14, 10, 13, 11),
-            Arguments.of(ItemType.BACKSTAGE_PASSES.name(), 5, 10, 4, 13),
-            Arguments.of(ItemType.BACKSTAGE_PASSES.name(), 1, 49, 0, 50),
+            Arguments.of(ItemType.SULFURAS.getName(), 10, 80, 10, 80),
+            Arguments.of(ItemType.AGED_BRIE.getName(), 10, 10, 9, 11),
+            Arguments.of(ItemType.AGED_BRIE.getName(), 10, 50, 9, 50),
+            Arguments.of(ItemType.BACKSTAGE_PASSES.getName(), 10, 10, 9, 12),
+            Arguments.of(ItemType.BACKSTAGE_PASSES.getName(), 14, 10, 13, 11),
+            Arguments.of(ItemType.BACKSTAGE_PASSES.getName(), 5, 10, 4, 13),
+            Arguments.of(ItemType.BACKSTAGE_PASSES.getName(), 1, 49, 0, 50),
             Arguments.of("Normal item", 0, 10, -1, 8),
-            Arguments.of(ItemType.BACKSTAGE_PASSES.name(), 0, 10, -1, 0),
-            Arguments.of(ItemType.AGED_BRIE.name(), 0, 10, -1, 12)
+            Arguments.of(ItemType.BACKSTAGE_PASSES.getName(), 0, 10, -1, 0),
+            Arguments.of(ItemType.AGED_BRIE.getName(), 0, 10, -1, 12)
         );
     }
 
