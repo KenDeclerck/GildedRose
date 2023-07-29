@@ -6,7 +6,7 @@ public enum ItemType {
     SULFURAS("Sulfuras, Hand of Ragnaros"),
     AGED_BRIE("Aged Brie"),
     BACKSTAGE_PASSES("Backstage passes to a TAFKAL80ETC concert"),
-    DEFAULT(""),
+    NORMAL(""),
     ;
 
     private final String name;
@@ -15,7 +15,7 @@ public enum ItemType {
     }
 
     public static ItemType forName(String value) {
-        return Arrays.stream(values()).filter(itemType ->  itemType.name.equals(value)).findFirst().orElse(DEFAULT);
+        return Arrays.stream(values()).filter(itemType ->  itemType.name.equals(value)).findFirst().orElse(NORMAL);
     }
 
     public String getName() {

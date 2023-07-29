@@ -4,7 +4,7 @@ import com.gildedrose.Item;
 import com.gildedrose.modifier.QualityModifier;
 import com.gildedrose.modifier.SellInModifier;
 
-public class DefaultItemProcessor implements ItemProcessor {
+public class NormalItemProcessor implements ItemProcessor {
     @Override
     public void process(Item item) {
         SellInModifier.update(item);
