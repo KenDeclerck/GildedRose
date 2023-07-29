@@ -16,8 +16,6 @@ public class TexttestFixture {
                 // this conjured item does not work properly yet
                 new Item("Conjured Mana Cake", 3, 6) };
 
-        GildedRose app = new GildedRose(items);
-
         int days = 2;
         if (args.length > 0) {
             days = Integer.parseInt(args[0]) + 1;
@@ -30,7 +28,7 @@ public class TexttestFixture {
                 System.out.println(item);
             }
             System.out.println();
-            app.updateQuality();
+            GildedRose.updateQuality(items);
         }
     }
 

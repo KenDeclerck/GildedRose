@@ -19,11 +19,11 @@ class GildedRoseTest {
     @ParameterizedTest(name = "{index}: {0} with sellIn {1} and quality {2} - Expected: sellIn={3}, quality={4}")
     @MethodSource("provideItemsForUpdateQuality")
     void shouldUpdateQualityAndSellIn(String name, int initialSellIn, int initialQuality, int expectedSellIn, int expectedQuality) {
-        GildedRose app = new GildedRose(new Item[]{new Item(name, initialSellIn, initialQuality)});
+        Item[] items = {new Item(name, initialSellIn, initialQuality)};
 
-        app.updateQuality();
+        GildedRose.updateQuality(items);
 
-        assertItemQualityAndSellIn(app.items[0], expectedSellIn, expectedQuality);
+        assertItemQualityAndSellIn(items[0], expectedSellIn, expectedQuality);
     }
 
     private static Stream<Arguments> provideItemsForUpdateQuality() {

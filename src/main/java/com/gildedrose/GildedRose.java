@@ -1,7 +1,5 @@
 package com.gildedrose;
 
-import java.util.Arrays;
-
 class GildedRose {
     Item[] items;
 
@@ -17,8 +15,8 @@ class GildedRose {
         return item.sellIn < 0;
     }
 
-    public void updateQuality() {
-        Arrays.stream(items).forEach(item -> {
+    public static void updateQuality(Item[] items1) {
+        for (Item item : items1) {
             switch (ItemName.forName(item.name)) {
                 case AGED_BRIE:
                     updateSellIn(item);
@@ -29,13 +27,13 @@ class GildedRose {
                     processBackStagePasses(item);
                     break;
                 case SULFURAS:
-                    return;
+                    continue;
                 default:
                     updateSellIn(item);
                     processOtherItems(item);
                     break;
             }
-        });
+        }
     }
 
     private static void processOtherItems(Item item) {
