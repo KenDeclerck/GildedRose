@@ -6,7 +6,7 @@ public enum ItemName {
     SULFURAS("Sulfuras, Hand of Ragnaros"),
     AGED_BRIE("Aged Brie"),
     BACKSTAGE_PASSES("Backstage passes to a TAFKAL80ETC concert"),
-    OTHER_ITEM(""),
+    DEFAULT(""),
     ;
 
     private final String name;
@@ -15,6 +15,6 @@ public enum ItemName {
     }
 
     public static ItemName forName(String value) {
-        return Arrays.stream(values()).filter(itemName ->  itemName.name.equals(value)).findFirst().orElse(OTHER_ITEM);
+        return Arrays.stream(values()).filter(itemName ->  itemName.name.equals(value)).findFirst().orElse(DEFAULT);
     };
 }

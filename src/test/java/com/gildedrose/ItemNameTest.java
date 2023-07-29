@@ -30,6 +30,6 @@ class ItemNameTest {
     void shouldGetOtherItemIfNameNotFound() {
         ItemName itemName = ItemName.valueOf("Something else");
 
-        assertEquals(ItemName.OTHER_ITEM, itemName);
+        assertEquals(ItemName.DEFAULT, itemName);
     }
 }
