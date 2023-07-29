@@ -23,6 +23,7 @@ class GildedRoseTest {
     private static Stream<Arguments> provideItemsForUpdateQuality() {
         return Stream.of(
             Arguments.of("Normal item", 10, 10, 9, 9),
+            Arguments.of("Normal item", -1, 10, -2, 8),
             Arguments.of("other normal item", 5, 16, 4, 15),
             Arguments.of("other normal item", 5, 0, 4, 0),
             Arguments.of(ItemType.SULFURAS.getName(), 10, 80, 10, 80),
@@ -34,7 +35,9 @@ class GildedRoseTest {
             Arguments.of(ItemType.BACKSTAGE_PASSES.getName(), 1, 49, 0, 50),
             Arguments.of("Normal item", 0, 10, -1, 8),
             Arguments.of(ItemType.BACKSTAGE_PASSES.getName(), 0, 10, -1, 0),
-            Arguments.of(ItemType.AGED_BRIE.getName(), 0, 10, -1, 12)
+            Arguments.of(ItemType.AGED_BRIE.getName(), 0, 10, -1, 12),
+            Arguments.of(ItemType.CONJURED.getName(), -1, 10, -2, 6),
+            Arguments.of(ItemType.CONJURED.getName(), 10, 10, 9, 8)
         );
     }
 

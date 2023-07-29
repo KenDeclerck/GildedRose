@@ -9,7 +9,8 @@ class GildedRose {
     private static final Map<ItemType, ItemProcessor> processorsByName = Map.of(ItemType.AGED_BRIE, new AgedBrieProcessor(),
         ItemType.BACKSTAGE_PASSES, new BackStagePassesProcessor(),
         ItemType.SULFURAS, new SulfurasProcessor(),
-        ItemType.NORMAL, new NormalItemProcessor());
+        ItemType.NORMAL, new NormalItemProcessor(),
+        ItemType.CONJURED, new ConjuredItemProcessor());
 
     public static void processItemsForOneDay(Item[] items) {
         for (Item item : items) {
