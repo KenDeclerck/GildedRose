@@ -8,27 +8,27 @@ class ItemNameTest {
 
     @Test
     void shouldGetCorrectEnumSulfuras() {
-        ItemName itemName = ItemName.forValue("Sulfuras, Hand of Ragnaros");
+        ItemName itemName = ItemName.valueOf("Sulfuras, Hand of Ragnaros");
 
         assertEquals(ItemName.SULFURAS, itemName);
     }
 
     @Test
     void shouldGetCorrectEnumAgedBrie() {
-        ItemName itemName = ItemName.forValue("Aged Brie");
+        ItemName itemName = ItemName.valueOf("Aged Brie");
 
         assertEquals(ItemName.AGED_BRIE, itemName);
     }
     @Test
     void shouldGetCorrectEnumBackstagePasses() {
-        ItemName itemName = ItemName.forValue("Backstage passes to a TAFKAL80ETC concert");
+        ItemName itemName = ItemName.valueOf("Backstage passes to a TAFKAL80ETC concert");
 
         assertEquals(ItemName.BACKSTAGE_PASSES, itemName);
     }
 
     @Test
     void shouldGetOtherItemIfNameNotFound() {
-        ItemName itemName = ItemName.forValue("Something else");
+        ItemName itemName = ItemName.valueOf("Something else");
 
         assertEquals(ItemName.OTHER_ITEM, itemName);
     }

@@ -19,16 +19,19 @@ class GildedRose {
 
     public void updateQuality() {
         Arrays.stream(items).forEach(item -> {
-            switch (ItemName.valueOf(item.name)) {
-                case SULFURAS:
-                    return;
+            switch (ItemName.forName(item.name)) {
                 case AGED_BRIE:
+                    updateSellIn(item);
                     processAgedBrie(item);
                     break;
                 case BACKSTAGE_PASSES:
+                    updateSellIn(item);
                     processBackStagePasses(item);
                     break;
+                case SULFURAS:
+                    return;
                 default:
+                    updateSellIn(item);
                     processOtherItems(item);
                     break;
             }
@@ -36,7 +39,6 @@ class GildedRose {
     }
 
     private static void processOtherItems(Item item) {
-        updateSellIn(item);
         if (sellByDateHasPassed(item)) {
             subtractQuality(item, 2);
         } else {
@@ -49,7 +51,6 @@ class GildedRose {
     }
 
     private static void processBackStagePasses(Item item) {
-        updateSellIn(item);
         if (item.sellIn > 10) {
             addQuality(item, 1);
         } else if (item.sellIn < 10 && item.sellIn > 5) {
@@ -62,7 +63,6 @@ class GildedRose {
     }
 
     private static void processAgedBrie(Item item) {
-        updateSellIn(item);
         if (sellByDateHasPassed(item)) {
             addQuality(item, 2);
         } else {

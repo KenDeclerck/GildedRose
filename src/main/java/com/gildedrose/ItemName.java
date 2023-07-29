@@ -9,12 +9,12 @@ public enum ItemName {
     OTHER_ITEM(""),
     ;
 
-    private final String value;
-    ItemName(String value) {
-        this.value = value;
+    private final String name;
+    ItemName(String name) {
+        this.name = name;
     }
 
-    public static ItemName forValue(String value) {
-        return Arrays.stream(values()).filter(itemName ->  itemName.value.equals(value)).findFirst().orElse(OTHER_ITEM);
+    public static ItemName forName(String value) {
+        return Arrays.stream(values()).filter(itemName ->  itemName.name.equals(value)).findFirst().orElse(OTHER_ITEM);
     };
 }
