@@ -15,24 +15,26 @@ class GildedRose {
     public void updateQuality() {
         Arrays.stream(items).forEach(item -> {
             if (!item.name.equals(AGED_BRIE)
-                    && !item.name.equals(BACKSTAGE_PASSES)) {
-                if (item.quality > 0) {
-                    if (!item.name.equals(SULFURAS)) {
-                        item.quality = item.quality - 1;
-                    }
-                }
+                && !item.name.equals(BACKSTAGE_PASSES)
+                && !item.name.equals(SULFURAS) && item.quality > 0) {
+                item.quality = item.quality - 1;
             } else {
                 if (item.quality < 50) {
-                    item.quality = item.quality + 1;
                     if (item.name.equals(BACKSTAGE_PASSES)) {
-                        if (item.sellIn < 11 && (item.quality < 50)) {
-                                item.quality = item.quality + 1;
+                        if (item.sellIn > 11) {
+                            addQuality(item, 1);
                         }
-                        if (item.sellIn < 6) {
-                            if (item.quality < 50) {
-                                item.quality = item.quality + 1;
-                            }
+                        else if (item.sellIn < 11 && item.sellIn > 6) {
+                            addQuality(item, 2);
                         }
+                        else if (item.sellIn < 6 && item.sellIn >= 0) {
+                            addQuality(item, 3);
+                        }
+                        else if (item.sellIn < 0) {
+                            item.quality = 0;
+                        }
+                    } else {
+                        addQuality(item, 1);
                     }
                 }
             }
@@ -52,10 +54,14 @@ class GildedRose {
                     }
                 } else {
                     if (item.quality < 50) {
-                        item.quality = item.quality + 1;
+                        addQuality(item, 1);
                     }
                 }
             }
         });
+    }
+
+    private static void addQuality(Item item, int amount) {
+        item.quality = Math.min(item.quality + amount, 50);
     }
 }

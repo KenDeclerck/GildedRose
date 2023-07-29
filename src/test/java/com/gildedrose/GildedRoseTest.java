@@ -36,6 +36,7 @@ class GildedRoseTest {
             Arguments.of(BACKSTAGE_PASSES, 10, 10, 9, 12),
             Arguments.of(BACKSTAGE_PASSES, 14, 10, 13, 11),
             Arguments.of(BACKSTAGE_PASSES, 5, 10, 4, 13),
+            Arguments.of(BACKSTAGE_PASSES, 1, 49, 0, 50),
             Arguments.of(NORMAL_ITEM, 0, 10, -1, 8),
             Arguments.of(BACKSTAGE_PASSES, 0, 10, -1, 0),
             Arguments.of(AGED_BRIE, 0, 10, -1, 12)
