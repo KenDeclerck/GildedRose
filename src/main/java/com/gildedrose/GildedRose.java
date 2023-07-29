@@ -3,18 +3,17 @@ package com.gildedrose;
 import com.gildedrose.processors.*;
 
 import java.util.Map;
-import java.util.PropertyResourceBundle;
 
 class GildedRose {
 
-    private static final Map<ItemName, ItemProcessor> processorsByName = Map.of(ItemName.AGED_BRIE, new AgedBrieProcessor(),
-        ItemName.BACKSTAGE_PASSES, new BackStagePassesProcessor(),
-        ItemName.SULFURAS, new SulfurasProcessor(),
-        ItemName.DEFAULT, new DefaultItemProcessor());
+    private static final Map<ItemType, ItemProcessor> processorsByName = Map.of(ItemType.AGED_BRIE, new AgedBrieProcessor(),
+        ItemType.BACKSTAGE_PASSES, new BackStagePassesProcessor(),
+        ItemType.SULFURAS, new SulfurasProcessor(),
+        ItemType.DEFAULT, new DefaultItemProcessor());
 
     public static void processItemsForOneDay(Item[] items) {
         for (Item item : items) {
-            processorsByName.get(ItemName.forName(item.name)).process(item);
+            processorsByName.get(ItemType.forName(item.name)).process(item);
         }
     }
 }
