@@ -30,6 +30,7 @@ class GildedRoseTest {
         return Stream.of(
             Arguments.of(NORMAL_ITEM, 10, 10, 9, 9),
             Arguments.of(NORMAL_ITEM1, 5, 16, 4, 15),
+            Arguments.of(NORMAL_ITEM1, 5, 0, 4, 0),
             Arguments.of(SULFURAS, 10, 80, 10, 80),
             Arguments.of(AGED_BRIE, 10, 10, 9, 11),
             Arguments.of(AGED_BRIE, 10, 50, 9, 50),
