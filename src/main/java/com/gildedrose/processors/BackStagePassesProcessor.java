@@ -10,11 +10,11 @@ public class BackStagePassesProcessor implements ItemProcessor {
         SellInModifier.update(item);
         if (item.sellIn > 10) {
             QualityModifier.addQuality(item, 1);
-        } else if (item.sellIn < 10 && item.sellIn > 5) {
+        } else if (item.sellIn > 5) {
             QualityModifier.addQuality(item, 2);
-        } else if (item.sellIn < 5 && item.sellIn >= 0) {
+        } else if (item.sellIn >= 0) {
             QualityModifier.addQuality(item, 3);
-        } else if (item.sellIn < 0) {
+        } else {
             item.quality = 0;
         }
     }
