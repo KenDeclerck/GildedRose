@@ -6,6 +6,11 @@ import com.gildedrose.ItemType;
 public class SulfurasProcessor implements ItemProcessor {
     @Override
     public void process(Item item) {
-        System.out.println("Nothing should be processed for " + ItemType.SULFURAS);
+//        Nothing should be processed for " + ItemType.SULFURAS);
+    }
+
+    @Override
+    public ItemType getItemType() {
+        return ItemType.SULFURAS;
     }
 }

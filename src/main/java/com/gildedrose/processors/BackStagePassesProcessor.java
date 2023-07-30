@@ -1,6 +1,7 @@
 package com.gildedrose.processors;
 
 import com.gildedrose.Item;
+import com.gildedrose.ItemType;
 import com.gildedrose.modifier.QualityModifier;
 import com.gildedrose.modifier.SellInModifier;
 
@@ -17,5 +18,10 @@ public class BackStagePassesProcessor implements ItemProcessor {
         } else {
             item.quality = 0;
         }
+    }
+
+    @Override
+    public ItemType getItemType() {
+        return ItemType.BACKSTAGE_PASSES;
     }
 }
